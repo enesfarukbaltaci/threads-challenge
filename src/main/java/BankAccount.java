@@ -48,4 +48,12 @@ public class BankAccount {
             lock.unlock();
         }
     }
+    public double getBalance() {
+        lock.lock();
+        try {
+            return balance;
+        } finally {
+            lock.unlock();
+        }
+    }
 }
